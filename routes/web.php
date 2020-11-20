@@ -22,3 +22,6 @@ $router->get('/welcome', function () use ($router){
 });
 
 $router->post('/register','UsersController@register');
+
+$router->get('/anime', 'AnimeController@animes');
+$router->get('/anime/{id}', 'AnimeController@getanime');

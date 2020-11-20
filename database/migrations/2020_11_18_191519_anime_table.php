@@ -13,12 +13,13 @@ class AnimeTable extends Migration
      */
     public function up()
     {
-        Schema::create('anime_table', function (Blueprint $table) {
+        Schema::create('anime', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->text('description');
             $table->date('release_date');
             $table->string('season');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class AnimeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('anime');
     }
 }
